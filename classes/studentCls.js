@@ -1,3 +1,4 @@
+import { Flight } from "./flightCls.js";
 export class StudentPassenger {
     static count = 1
     constructor(name, amountOfMony, schoolOrUniversityName) {
@@ -7,15 +8,18 @@ export class StudentPassenger {
         this.schoolOrUniversityName = schoolOrUniversityName
 
     }
-    discount(){
-        if (RegularPassenger) {
-            return price * 0.90
-        }
-        else{return false}
+    buyATicket() {
+        const ticketPrice = new Flight().regularTicketPrice
+        const VIPPrice = new Flight().VIPTicketPrice
+        if (ticketPrice) return ticketPrice * 0.90
+        else return VIPPrice
     }
-    enughMony(){
-        if (this.amountOfMony < Ticket.price) {
-            return false 
+    ckeckEnoughMony() {
+        if (this.amountOfMony < ticketPrice) return false
+        if (this.amountOfMony < VIPPrice) return false
+        else {
+            console.log("not enough mony");
+            return true
         }
     }
 }

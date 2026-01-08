@@ -1,3 +1,4 @@
+import { RegularTicket,VIPTicket } from "./tickesClses.js";
 export class Flight {
     constructor(flightName, airline, flightNumber, maxNumOfPassengers, regularTicketPrice, VIPTicketPrice) {
         this.flightName = flightName
@@ -6,8 +7,6 @@ export class Flight {
         this.maxNumOfPassengers = maxNumOfPassengers
         this.regularTicketPrice = regularTicketPrice
         this.VIPTicketPrice = VIPTicketPrice
-        this.ticketList = maxNumOfPassengers
+        this.ticketList = [maxNumOfPassengers]  // list size max passengers
     }
 }
-const a  = new Flight("boing","c3",2359,320,399.90,999.90)
-console.log(a);

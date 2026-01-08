@@ -1,3 +1,5 @@
+import { Flight } from "./flightCls.js";
+
 export class RegularPassenger {
     static count = 1
     constructor(name, amountOfMony, workplace, knowsAnAirportEmployee) {
@@ -7,16 +9,21 @@ export class RegularPassenger {
             this.workplace = workplace,
             this.knowsAnAirportEmployee = knowsAnAirportEmployee
     }
-    dicount() {
-        if (knowsAnAirportEmployee) {
-            if (regularTicket) {
-                return price * 0.80
-            }
-            if (vipTicket) {
-                return price * 0.85
-            }
-        } else {
-            return price
+    buyATicket() {
+        const ticketPrice = new Flight().regularTicketPrice
+        const VIPPrice = new Flight().VIPTicketPrice
+        if (this.knowsAnAirportEmployee == true) {
+            return ticketPrice * 0.80 && VIPPrice * 0.85
+        }
+        else return ticketPrice && VIPPrice
+    }
+    ckeckEnoughMony() {
+        if (this.amountOfMony < ticketPrice) return false
+        if (this.amountOfMony < VIPPrice) return false
+        else {
+            console.log("not enough mony");
+            return true
         }
     }
 }
+
