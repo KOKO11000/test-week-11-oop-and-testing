@@ -14,13 +14,12 @@ export class StudentPassenger {
         if (ticketPrice) return ticketPrice * 0.90
         else return VIPPrice
     }
-    ckeckEnoughMony() {
-        if (this.amountOfMony < ticketPrice) return false
-        if (this.amountOfMony < VIPPrice) return false
-        else {
-            console.log("not enough mony");
-            return true
-        }
+
+}
+export function ckeckEnoughMony(amountOfMony,ticketPrice) {
+    if (amountOfMony < ticketPrice) return false
+    else {
+        console.log("not enough money");
+        return true
     }
 }
-
