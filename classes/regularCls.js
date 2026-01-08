@@ -1,10 +1,11 @@
-class RegularPassenger {
-    constructor(name, idNumber, amountOfMony) {
-        this.name = name
-        this.idNumber = idNumber
-        this.amountOfMony = amountOfMony
-        this.workplace
-        this.knowsAnAirportEmployee
+export class RegularPassenger {
+    static count = 1
+    constructor(name, amountOfMony, workplace, knowsAnAirportEmployee) {
+        this.name = name,
+            this.idNumber = RegularPassenger.count++,
+            this.amountOfMony = amountOfMony,
+            this.workplace = workplace,
+            this.knowsAnAirportEmployee = knowsAnAirportEmployee
     }
     dicount() {
         if (knowsAnAirportEmployee) {
